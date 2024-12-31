@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker</title>
+    <link rel="shortcut icon" href="img/bookmark.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="home py-5">
+        <h1 class="text-center">Bookmarker</h1>
+        <hr />
+        <p class="text-center lead">
+          <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </p>
+        <div class="d-flex justify-content-center flex-column">
+          <label for="siteName"
+            ><i class="fa-solid fa-book me-2"></i>Bookmark Name</label
+          >
+          <input
+            type="text"
+            class="form-control mb-2 mt-2"
+            id="siteName"
+            placeholder="Site Name"
+            oninput="siteNameVallidate()"
+          />
+          <p class="text-site d-none" id="textSiteAlert">
+            Enter a word that starts with one uppercase letter followed by 3 to
+            10 lowercase letters.
+          </p>
+          <label for="siteUrl"
+            ><i class="fa-solid fa-link me-2"></i>Site Url</label
+          >
+          <input
+          oninput="urlNameVallidate()"
+            type="text"
+            class="form-control my-2"
+            id="siteUrl"
+            placeholder="Website URL"
+          />
+          <p class="text-url d-none" id="textUrlAlert">
+            "Enter a valid URL starting with 'http' or 'https', optionally with 'www', followed by a domain name and a valid top-level domain (e.g., '.com', '.org')."
+          </p>
+
+          <button
+            class="btn submit mx-auto mt-4 py-2 px-5 text-light"
+            onclick="addWeb()"
+          >
+            Submit
+          </button>
+        </div>
+        
+        <hr />
+
+        <input
+          type="search"
+          id="searchInput"
+          class="form-control"
+          placeholder="Search by website Name"
+          oninput="search()"
+        />
+      </div>
+
+      <table class="table text-center table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Website Name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tBody"></tbody>
+      </table>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
